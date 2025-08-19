@@ -1,0 +1,61 @@
+# Example Terraform variables file
+# Copy this file to terraform.tfvars and update the values
+
+# Required: Your domain name
+domain_name = "casey.click"
+
+# Optional: AWS region (default: ap-southeast-1)
+aws_region = "ap-southeast-1"
+
+# Optional: S3 bucket name (if not specified, will be auto-generated)
+# bucket_name = "casey-click-website-bucket"
+
+# Optional: Environment name (default: prod)
+environment = "prod"
+
+# Optional: Enable CloudFront logging (default: false)
+enable_cloudfront_logging = false
+
+# Optional: CloudFront price class (default: PriceClass_100)
+# PriceClass_100: US, Canada, Europe
+# PriceClass_200: US, Canada, Europe, Asia, Middle East, Africa
+# PriceClass_All: All CloudFront edge locations
+cloudfront_price_class = "PriceClass_100"
+
+# Optional: Enable IPv6 (default: true)
+enable_ipv6 = true
+
+# Optional: Minimum TLS protocol version (default: TLSv1.2_2021)
+minimum_protocol_version = "TLSv1.2_2021"
+
+# Optional: Default root object (default: index.html)
+default_root_object = "index.html"
+
+# Optional: Cache behavior settings (defaults shown)
+cache_behavior_settings = {
+  default_ttl = 86400    # 1 day
+  max_ttl     = 31536000 # 1 year  
+  min_ttl     = 0
+}
+
+# Optional: Custom error responses (defaults shown)
+custom_error_response = [
+  {
+    error_code            = 404
+    response_code         = 200
+    response_page_path    = "/index.html"
+    error_caching_min_ttl = 300
+  },
+  {
+    error_code            = 403
+    response_code         = 200
+    response_page_path    = "/index.html"
+    error_caching_min_ttl = 300
+  }
+]
+
+# Optional: Additional tags
+tags = {
+  Owner   = "Your Name"
+  Purpose = "Static Website Hosting"
+}
