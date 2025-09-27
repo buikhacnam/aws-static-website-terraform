@@ -343,6 +343,9 @@ This project implements security best practices:
 - Server-side encryption for S3 objects
 - Proper IAM policies with least privilege access
 
+## Resource Creation Overview
+View the [RESOURCE_CREATION_OVERVIEW.md](RESOURCE_CREATION_OVERVIEW.md) file for a detailed overview of the resources created by this Terraform project.
+
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).

@@ -97,7 +97,7 @@ module "route53" {
 module "cloudfront" {
   source = "./modules/cloudfront"
 
-  domain_name                    = var.domain_name
+  domain_name                   = var.domain_name
   bucket_id                     = module.s3_website.bucket_id
   bucket_arn                    = module.s3_website.bucket_arn
   bucket_domain_name            = module.s3_website.bucket_domain_name
